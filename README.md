@@ -1,0 +1,2 @@
+# django
+Example simple project
