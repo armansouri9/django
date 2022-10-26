@@ -104,8 +104,8 @@ class Author(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     date_of_death = models.DateField('Died', null=True, blank=True)
 
-    # class Meta:
-    #     permissions = (("can_mark_returned", "Set book as returned"),)  
+    class Meta:
+        permissions = (("can_mark_returned", "Set book as returned"),)  
     
     def get_absolute_url(self):
         """

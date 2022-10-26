@@ -34,6 +34,7 @@
           <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>   
           {% endif %} 
           <li><a href="{% url 'app1:auth_check' %}">Auth Check</a></li>
+
           </ul>
      {% endblock %}
       </div>

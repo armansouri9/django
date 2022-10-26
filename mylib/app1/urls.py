@@ -21,11 +21,15 @@ app_name='app1'
 urlpatterns = [
     path('', views.index.as_view(),name='index'),
     path('books/', views.BookListView.as_view(),name='books'),
-    path('book/?p<pk>', views.BookDetailView.as_view(),name='book-detail'),
+    path('book/<pk>', views.BookDetailView.as_view(),name='book-detail'),
     path('authors/', views.AuthorListView.as_view(),name='authors'),
     path('auth_check/',views.auth_check,name='auth_check')
 ]
 
 urlpatterns += [   
     path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]
+
+urlpatterns += [   
+    path('book/<pk>/renew/', views.renew_book_librarian, name='renew-book-librarian'),
 ]
