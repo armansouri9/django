@@ -1,0 +1,16 @@
+{% extends "app1/base_generic.html" %}
+
+{% block content %}
+    <h1>Auth Check</h1>
+
+    <ul>
+        <li>user is authenticated :{{user.is_authenticated}}</li>
+        <li>user  Name :{{user.get_username}}</li>
+        
+    </ul>
+    {% for group in groups %}
+    <li>
+        <strong>Groups : {{ group.name }}<strong>
+    </li>
+{% endfor %}
+{% endblock %}

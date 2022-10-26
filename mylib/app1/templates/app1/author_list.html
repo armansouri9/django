@@ -16,5 +16,11 @@
     </ul>
     {% else %}
       <p>There are no books in the library.</p>
-    {% endif %}       
+    {% endif %}   
+    
+    {% if perms.catalog.can_mark_returned %}
+    <!-- We can mark a BookInstance as returned. -->
+    <!-- Perhaps add code to link to a "book return" view here. -->
+    perms:True
+    {% endif %}
 {% endblock %}
