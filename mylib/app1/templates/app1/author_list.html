@@ -1,0 +1,20 @@
+{% extends "app1/base_generic.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %}
+        <li><h1>Author Name :{{ author.last_name }}</h1></li>
+        <li><p>Author first name :{{ author.first_name }}</p></li>
+        <li><p>Date of birth :{{ author.date_of_birth }}</p></li>
+        <br>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}       
+{% endblock %}

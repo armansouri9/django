@@ -19,7 +19,11 @@ from . import views
 
 app_name='app1'
 urlpatterns = [
-    path('', views.index,name='index'),
+    path('', views.index.as_view(),name='index'),
+    path('books/', views.BookListView.as_view(),name='books'),
+    path('book/?p<pk>', views.BookDetailView.as_view(),name='book-detail'),
+    path('authors/', views.AuthorListView.as_view(),name='authors'),
+
 ]
 
 
